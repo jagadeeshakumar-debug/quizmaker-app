@@ -35,7 +35,15 @@
 	"observability": {
 		"enabled": true
 	},
-	"upload_source_maps": true
+	"upload_source_maps": true,
+	"d1_databases": [
+		{
+			"binding": "quizmaker_database",
+			"database_name": "quizmaker-database",
+			"database_id": "986495eb-3ee4-4008-96e1-dde24d3d6bec",
+			"remote": true
+		}
+	]
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
