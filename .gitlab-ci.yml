@@ -1,0 +1,19 @@
+stages:
+  - deploy
+
+deploy_to_cloudflare:
+  stage: deploy
+  image: node:20
+  only:
+    - main
+    - master
+  script:
+    - echo "Installing dependencies..."
+    - npm ci
+    - echo "Building application..."
+    - npm run build
+    - echo "Deploying to Cloudflare..."
+    - npm run deploy
+  variables:
+    CLOUDFLARE_API_TOKEN: $CLOUDFLARE_API_TOKEN
+    CLOUDFLARE_ACCOUNT_ID: $CLOUDFLARE_ACCOUNT_ID
